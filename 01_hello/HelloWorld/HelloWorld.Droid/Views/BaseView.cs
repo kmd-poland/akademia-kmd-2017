@@ -17,8 +17,8 @@ namespace HelloWorld.Droid.Views
             Toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
             if (Toolbar != null) {
                 SetSupportActionBar (Toolbar);
-                SupportActionBar.SetDisplayHomeAsUpEnabled (true);
-                SupportActionBar.SetHomeButtonEnabled (true);
+                //SupportActionBar.SetDisplayHomeAsUpEnabled (true);
+                //SupportActionBar.SetHomeButtonEnabled (true);
             }
         }
 

@@ -1,9 +1,12 @@
 ﻿using Android.App;
 using Android.OS;
+using MvvmCross.Binding.BindingContext;
+using HelloWorld.Core.ViewModels;
+using Android.Widget;
 
 namespace HelloWorld.Droid.Views
 {
-    [Activity (Label = "View for FirstViewModel")]
+    [Activity (Label = "KMD AKADEMIA")]
     public class FirstView : BaseView
     {
         protected override int LayoutResource => Resource.Layout.FirstView;
@@ -12,7 +15,8 @@ namespace HelloWorld.Droid.Views
         {
             base.OnCreate (bundle);
 
-            SupportActionBar.SetDisplayHomeAsUpEnabled (false);
+
+
         }
     }
 }
