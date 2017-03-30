@@ -18,9 +18,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:padding="10dp"
+            android:weightSum="5"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent">
+            <EditText
+                android:id="@+id/dzielna"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/znak_dzielenia"
+                android:text="/"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <EditText
+                android:id="@+id/dzielnik"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/znak_rownosci"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="="
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/iloraz"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
     </FrameLayout>
 </RelativeLayout>
