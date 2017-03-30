@@ -15,7 +15,22 @@ namespace HelloWorld.Droid.Views
         {
             base.OnCreate (bundle);
 
+			var dzielna = FindViewById<EditText>(Resource.Id.dzielna);
+			var dzielnik = FindViewById<EditText>(Resource.Id.dzielnik);
+			var iloraz = FindViewById<TextView>(Resource.Id.iloraz);
 
+			var bSet = this.CreateBindingSet<FirstView, FirstViewModel>();
+
+			bSet.Bind(dzielna)
+				.To(vm => vm.Dzielna);
+
+			bSet.Bind(dzielnik)
+			    .To(vm => vm.Dzielnik);
+
+			bSet.Bind(iloraz)
+				.To(vm => vm.Iloraz);
+			
+			bSet.Apply();
 
         }
     }
