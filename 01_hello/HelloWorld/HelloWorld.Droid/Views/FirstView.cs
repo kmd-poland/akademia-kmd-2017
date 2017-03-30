@@ -3,11 +3,13 @@ using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using HelloWorld.Core.ViewModels;
 using Android.Widget;
+using MvvmCross.Platform.Converters;
+using System;
 
 namespace HelloWorld.Droid.Views
 {
     [Activity (Label = "KMD AKADEMIA")]
-    public class FirstView : BaseView
+	public class FirstView : BaseView
     {
         protected override int LayoutResource => Resource.Layout.FirstView;
 
@@ -22,16 +24,33 @@ namespace HelloWorld.Droid.Views
 			var bSet = this.CreateBindingSet<FirstView, FirstViewModel>();
 
 			bSet.Bind(dzielna)
-				.To(vm => vm.Dzielna);
+				.To(vm => vm.Dzielna)
+				.WithConversion(new FloatToStringConverter());
 
 			bSet.Bind(dzielnik)
-			    .To(vm => vm.Dzielnik);
+				.To(vm => vm.Dzielnik)
+				.WithConversion(new FloatToStringConverter());
 
 			bSet.Bind(iloraz)
 				.To(vm => vm.Iloraz);
 			
 			bSet.Apply();
-
         }
     }
+
+	public class FloatToStringConverter : MvxValueConverter<float, string>
+	{
+		protected override string Convert(float value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+		{
+			return value.ToString();
+		}
+
+		protected override float ConvertBack(string value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+		{
+			float result = 0;
+			float.TryParse(value, out result);
+			     
+			return result;
+		}
+	}
 }

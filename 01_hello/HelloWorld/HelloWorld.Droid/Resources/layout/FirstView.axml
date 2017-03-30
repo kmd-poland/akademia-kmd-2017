@@ -27,6 +27,7 @@
                 android:id="@+id/dzielna"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="numberDecimal"
                 android:layout_height="wrap_content"
                 android:gravity="center" />
             <TextView
@@ -39,6 +40,7 @@
             <EditText
                 android:id="@+id/dzielnik"
                 android:layout_width="0dp"
+                android:inputType="numberDecimal"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center" />
