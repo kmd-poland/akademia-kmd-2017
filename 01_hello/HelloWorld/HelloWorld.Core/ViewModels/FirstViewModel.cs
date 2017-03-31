@@ -1,4 +1,7 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using MvvmCross.Core.ViewModels;
+using ReactiveUI;
 
 namespace HelloWorld.Core.ViewModels
 {
