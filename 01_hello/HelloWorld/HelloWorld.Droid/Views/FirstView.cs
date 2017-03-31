@@ -24,6 +24,8 @@ namespace HelloWorld.Droid.Views
 			var button = FindViewById<Button>(Resource.Id.button_download);
 			var label = FindViewById<TextView>(Resource.Id.downloaded_string);
 
+			var buttonNavigate = FindViewById<Button>(Resource.Id.button_navigate);
+
 			var bSet = this.CreateBindingSet<FirstView, FirstViewModel>();
 
 			bSet.Bind(dzielna)
@@ -43,6 +45,9 @@ namespace HelloWorld.Droid.Views
 
 			bSet.Bind(label)
 				.To(vm => vm.DownloadedString);
+
+			bSet.Bind(buttonNavigate)
+			    .To(vm => vm.NavigateCommand);
 
 			bSet.Apply();
         }

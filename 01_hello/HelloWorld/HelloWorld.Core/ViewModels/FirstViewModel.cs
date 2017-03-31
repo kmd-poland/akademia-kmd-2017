@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
 using ReactiveUI;
+using ViewModels;
 
 namespace HelloWorld.Core.ViewModels
 {
@@ -57,12 +58,24 @@ namespace HelloWorld.Core.ViewModels
 			return "ERROR!";
 		}
 
+		public ReactiveCommand NavigateCommand { get; set; }
+		private void Navigate() 
+		{
+			this.ShowViewModel<SecondViewModel>();	
+		}
+
 		public FirstViewModel()
 		{
             this.DownloadStringCommand = ReactiveCommand.CreateFromTask<string, string>(async url => await DownloadString(url));
 			this.DownloadStringCommand.Subscribe(x=>{
 				DownloadedString = x;
 			});
+
+			this.NavigateCommand = ReactiveCommand.Create(delegate
+			{
+				Navigate();
+			});
+
 		}
 	}
 }

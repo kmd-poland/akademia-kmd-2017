@@ -69,5 +69,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DOWNLOAD" />
+        <Button
+            android:id="@+id/button_navigate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NAVIGATE" />
     </LinearLayout>
 </RelativeLayout>
