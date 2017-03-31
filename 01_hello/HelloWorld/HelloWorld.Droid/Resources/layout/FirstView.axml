@@ -12,9 +12,10 @@
             layout="@layout/toolbar"
             local:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/content_frame"
         android:layout_below="@id/toolbar_layout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -22,7 +23,7 @@
             android:padding="10dp"
             android:weightSum="5"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/dzielna"
                 android:layout_width="0dp"
@@ -58,5 +59,15 @@
                 android:layout_height="wrap_content"
                 android:gravity="center" />
         </LinearLayout>
-    </FrameLayout>
+        <TextView
+            android:id="@+id/downloaded_string"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/button_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DOWNLOAD" />
+    </LinearLayout>
 </RelativeLayout>

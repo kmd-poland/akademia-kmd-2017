@@ -21,6 +21,9 @@ namespace HelloWorld.Droid.Views
 			var dzielnik = FindViewById<EditText>(Resource.Id.dzielnik);
 			var iloraz = FindViewById<TextView>(Resource.Id.iloraz);
 
+			var button = FindViewById<Button>(Resource.Id.button_download);
+			var label = FindViewById<TextView>(Resource.Id.downloaded_string);
+
 			var bSet = this.CreateBindingSet<FirstView, FirstViewModel>();
 
 			bSet.Bind(dzielna)
@@ -33,7 +36,14 @@ namespace HelloWorld.Droid.Views
 
 			bSet.Bind(iloraz)
 				.To(vm => vm.Iloraz);
-			
+
+			bSet.Bind(button)
+				.To(vm => vm.DownloadStringCommand)
+				.CommandParameter("https://pastebin.com/raw/1f5KebFg");
+
+			bSet.Bind(label)
+				.To(vm => vm.DownloadedString);
+
 			bSet.Apply();
         }
     }

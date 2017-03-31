@@ -109,6 +109,7 @@ namespace HelloWorld.Droid
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_reverseLayout = global::HelloWorld.Droid.Resource.Styleable.RecyclerView_reverseLayout;
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_spanCount = global::HelloWorld.Droid.Resource.Styleable.RecyclerView_spanCount;
 			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_stackFromEnd = global::HelloWorld.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Splat.Resource.String.library_name = global::HelloWorld.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -2161,8 +2162,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f09000c
 			public const int MvxBindingTagUnique = 2131296268;
 			
-			// aapt resource value: 0x7f090081
-			public const int action0 = 2131296385;
+			// aapt resource value: 0x7f090083
+			public const int action0 = 2131296387;
 			
 			// aapt resource value: 0x7f090060
 			public const int action_bar = 2131296352;
@@ -2188,8 +2189,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090061
 			public const int action_context_bar = 2131296353;
 			
-			// aapt resource value: 0x7f090085
-			public const int action_divider = 2131296389;
+			// aapt resource value: 0x7f090087
+			public const int action_divider = 2131296391;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -2234,7 +2235,10 @@ namespace HelloWorld.Droid
 			public const int buttonPanel = 2131296329;
 			
 			// aapt resource value: 0x7f090082
-			public const int cancel_action = 2131296386;
+			public const int button_download = 2131296386;
+			
+			// aapt resource value: 0x7f090084
+			public const int cancel_action = 2131296388;
 			
 			// aapt resource value: 0x7f090014
 			public const int center = 2131296276;
@@ -2248,8 +2252,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090057
 			public const int checkbox = 2131296343;
 			
-			// aapt resource value: 0x7f090088
-			public const int chronometer = 2131296392;
+			// aapt resource value: 0x7f09008a
+			public const int chronometer = 2131296394;
 			
 			// aapt resource value: 0x7f090020
 			public const int clip_horizontal = 2131296288;
@@ -2296,6 +2300,9 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090030
 			public const int disableHome = 2131296304;
 			
+			// aapt resource value: 0x7f090081
+			public const int downloaded_string = 2131296385;
+			
 			// aapt resource value: 0x7f09007c
 			public const int dzielna = 2131296380;
 			
@@ -2308,8 +2315,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090017
 			public const int end = 2131296279;
 			
-			// aapt resource value: 0x7f09008d
-			public const int end_padder = 2131296397;
+			// aapt resource value: 0x7f09008f
+			public const int end_padder = 2131296399;
 			
 			// aapt resource value: 0x7f09000d
 			public const int enterAlways = 2131296269;
@@ -2356,8 +2363,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090044
 			public const int image = 2131296324;
 			
-			// aapt resource value: 0x7f09008c
-			public const int info = 2131296396;
+			// aapt resource value: 0x7f09008e
+			public const int info = 2131296398;
 			
 			// aapt resource value: 0x7f09000a
 			public const int item_touch_helper_previous_elevation = 2131296266;
@@ -2365,11 +2372,11 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090019
 			public const int left = 2131296281;
 			
-			// aapt resource value: 0x7f090086
-			public const int line1 = 2131296390;
+			// aapt resource value: 0x7f090088
+			public const int line1 = 2131296392;
 			
-			// aapt resource value: 0x7f09008a
-			public const int line3 = 2131296394;
+			// aapt resource value: 0x7f09008c
+			public const int line3 = 2131296396;
 			
 			// aapt resource value: 0x7f09002e
 			public const int listMode = 2131296302;
@@ -2377,8 +2384,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090046
 			public const int list_item = 2131296326;
 			
-			// aapt resource value: 0x7f090084
-			public const int media_actions = 2131296388;
+			// aapt resource value: 0x7f090086
+			public const int media_actions = 2131296390;
 			
 			// aapt resource value: 0x7f090039
 			public const int middle = 2131296313;
@@ -2512,8 +2519,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f09001b
 			public const int start = 2131296283;
 			
-			// aapt resource value: 0x7f090083
-			public const int status_bar_latest_event_content = 2131296387;
+			// aapt resource value: 0x7f090085
+			public const int status_bar_latest_event_content = 2131296389;
 			
 			// aapt resource value: 0x7f09005a
 			public const int submenuarrow = 2131296346;
@@ -2524,11 +2531,11 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f09002f
 			public const int tabMode = 2131296303;
 			
-			// aapt resource value: 0x7f09008b
-			public const int text = 2131296395;
+			// aapt resource value: 0x7f09008d
+			public const int text = 2131296397;
 			
-			// aapt resource value: 0x7f090089
-			public const int text2 = 2131296393;
+			// aapt resource value: 0x7f09008b
+			public const int text2 = 2131296395;
 			
 			// aapt resource value: 0x7f090052
 			public const int textSpacerNoButtons = 2131296338;
@@ -2536,8 +2543,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f090078
 			public const int text_input_password_toggle = 2131296376;
 			
-			// aapt resource value: 0x7f090087
-			public const int time = 2131296391;
+			// aapt resource value: 0x7f090089
+			public const int time = 2131296393;
 			
 			// aapt resource value: 0x7f090048
 			public const int title = 2131296328;
