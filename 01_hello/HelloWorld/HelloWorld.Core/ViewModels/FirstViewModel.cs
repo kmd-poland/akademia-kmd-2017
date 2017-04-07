@@ -2,6 +2,8 @@
 using MvvmCross.Core.ViewModels;
 using ReactiveUI;
 using ViewModels;
+using System.Diagnostics;
+using System;
 
 namespace HelloWorld.Core.ViewModels
 {
@@ -19,6 +21,7 @@ namespace HelloWorld.Core.ViewModels
 		public FirstViewModel()
 		{
 			this.NavigateCommand = ReactiveCommand.Create(() => this.ShowViewModel<SecondViewModel>());
+            this.NavigateCommand.ThrownExceptions.Subscribe (ex => Debug.WriteLine (ex));
 		}
 
 		public void Init(string name, string surname)
