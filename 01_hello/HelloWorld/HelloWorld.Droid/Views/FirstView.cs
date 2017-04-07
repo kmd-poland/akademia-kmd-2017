@@ -21,6 +21,9 @@ namespace HelloWorld.Droid.Views
 			var buttonAdd = FindViewById<Button>(Resource.Id.button_new_item);
 			var list = FindViewById<MvxListView>(Resource.Id.list);
 
+			buttonAdd.ContentDescription = "Add new item";
+			buttonAdd.Click += (sender, e) => { buttonAdd.AnnounceForAccessibility("Now you can add new item"); };
+
 			list.Adapter = new ListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
 			list.ItemTemplateId = Resource.Layout.list_item;
 

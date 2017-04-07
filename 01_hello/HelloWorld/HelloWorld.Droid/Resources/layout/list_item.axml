@@ -9,10 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
+        style="@style/Base.TextAppearance.AppCompat.Title"
         android:id="@+id/label_name" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
         android:id="@+id/label_surname" />
 </LinearLayout>
