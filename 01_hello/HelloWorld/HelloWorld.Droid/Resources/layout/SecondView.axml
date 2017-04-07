@@ -17,16 +17,22 @@
         android:layout_below="@id/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <MvxListView
-            android:id="@+id/list"
-            android:orientation="vertical"
-            android:padding="10dp"
+        <EditText
+            android:id="@+id/edit_1"
+            android:layout_alignParentTop="true"
+            android:hint="name"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edit_2"
+            android:hint="surname"
+            android:layout_below="@+id/edit_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/button_new_item"
             android:layout_alignParentBottom="true"
-            android:text="NEW ITEM"
+            android:text="ADD"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>
