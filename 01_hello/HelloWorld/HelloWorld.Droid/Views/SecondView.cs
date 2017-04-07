@@ -30,6 +30,10 @@ namespace Views
 			var inputName = FindViewById<EditText>(Resource.Id.edit_1);
 			var inputSurname = FindViewById<EditText>(Resource.Id.edit_2);
 
+			buttonAdd.ContentDescription = "Save data and return to list";
+			inputName.Hint = "Type name here";
+			inputSurname.Hint = "Type surname here";
+
 			var bSet = this.CreateBindingSet<SecondView, SecondViewModel>();
 
 			bSet.Bind(buttonAdd)
