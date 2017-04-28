@@ -21,6 +21,7 @@ namespace HelloWorld.Droid.Views
             var goToAlert = FindViewById<Button>(Resource.Id.button_alert);
             var goToCross = FindViewById<Button>(Resource.Id.button_cross);
             var goToRxUI = FindViewById<Button>(Resource.Id.button_rxui);
+            var goToPhoto = FindViewById<Button>(Resource.Id.button_plugin_photo);
 
 
 
@@ -36,6 +37,9 @@ namespace HelloWorld.Droid.Views
 
             bSet.Bind(goToRxUI)
                 .To(vm => vm.GoToRxUICanExecuteView);
+
+            bSet.Bind(goToPhoto)
+                .To(vm => vm.GoToPhotoPlugin);
 
             bSet.Apply();
         }

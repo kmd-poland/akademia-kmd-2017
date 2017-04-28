@@ -2298,8 +2298,26 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f02006e
+			public const int avd_hide_password_1 = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int avd_hide_password_2 = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int avd_hide_password_3 = 2130837616;
+			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
+			
+			// aapt resource value: 0x7f020071
+			public const int avd_show_password_1 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int avd_show_password_2 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int avd_show_password_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2479,17 +2497,20 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f0a004d
 			public const int buttonPanel = 2131361869;
 			
-			// aapt resource value: 0x7f0a00a3
-			public const int button_alert = 2131361955;
+			// aapt resource value: 0x7f0a00a5
+			public const int button_alert = 2131361957;
 			
 			// aapt resource value: 0x7f0a0086
 			public const int button_calculate = 2131361926;
 			
-			// aapt resource value: 0x7f0a00a4
-			public const int button_cross = 2131361956;
+			// aapt resource value: 0x7f0a00a6
+			public const int button_cross = 2131361958;
 			
-			// aapt resource value: 0x7f0a00a5
-			public const int button_rxui = 2131361957;
+			// aapt resource value: 0x7f0a00a8
+			public const int button_plugin_photo = 2131361960;
+			
+			// aapt resource value: 0x7f0a00a7
+			public const int button_rxui = 2131361959;
 			
 			// aapt resource value: 0x7f0a0090
 			public const int cancel_action = 2131361936;
@@ -2644,8 +2665,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f0a008b
 			public const int loadingProgressWheel = 2131361931;
 			
-			// aapt resource value: 0x7f0a00a7
-			public const int masked = 2131361959;
+			// aapt resource value: 0x7f0a00aa
+			public const int masked = 2131361962;
 			
 			// aapt resource value: 0x7f0a0092
 			public const int media_actions = 2131361938;
@@ -2685,6 +2706,9 @@ namespace HelloWorld.Droid
 			
 			// aapt resource value: 0x7f0a004f
 			public const int parentPanel = 2131361871;
+			
+			// aapt resource value: 0x7f0a00a4
+			public const int photo = 2131361956;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int pin = 2131361827;
@@ -2815,6 +2839,9 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f0a0033
 			public const int tabMode = 2131361843;
 			
+			// aapt resource value: 0x7f0a00a3
+			public const int take_photo = 2131361955;
+			
 			// aapt resource value: 0x7f0a00a1
 			public const int text = 2131361953;
 			
@@ -2881,8 +2908,8 @@ namespace HelloWorld.Droid
 			// aapt resource value: 0x7f0a0002
 			public const int view_offset_helper = 2131361794;
 			
-			// aapt resource value: 0x7f0a00a6
-			public const int visible = 2131361958;
+			// aapt resource value: 0x7f0a00a9
+			public const int visible = 2131361961;
 			
 			// aapt resource value: 0x7f0a0087
 			public const int volume = 2131361927;
@@ -3130,25 +3157,28 @@ namespace HelloWorld.Droid
 			public const int notification_template_part_time = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int select_dialog_item_material = 2130903100;
+			public const int PhotoPlugin = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int select_dialog_multichoice_material = 2130903101;
+			public const int select_dialog_item_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_singlechoice_material = 2130903102;
+			public const int select_dialog_multichoice_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int SplashScreen = 2130903103;
+			public const int select_dialog_singlechoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int StartView = 2130903104;
+			public const int SplashScreen = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
+			public const int StartView = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int toolbar = 2130903106;
+			public const int support_simple_spinner_dropdown_item = 2130903106;
+			
+			// aapt resource value: 0x7f030043
+			public const int toolbar = 2130903107;
 			
 			static Layout()
 			{

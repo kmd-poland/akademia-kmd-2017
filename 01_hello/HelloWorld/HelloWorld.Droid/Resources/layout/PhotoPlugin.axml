@@ -19,24 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
-            android:id="@+id/button_alert"
+            android:id="@+id/take_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Go to alert validation" />
-        <Button
-            android:id="@+id/button_cross"
-            android:layout_width="match_parent"
+            android:text="Take photo" />
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Go to cross validation" />
-        <Button
-            android:id="@+id/button_rxui"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Go to rxui validation" />
-        <Button
-            android:id="@+id/button_plugin_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Take photo using MVVMCross plugins" />
+            local:MvxBind="Bitmap Bytes,Converter=InMemoryImage" />
     </LinearLayout>
 </RelativeLayout>
