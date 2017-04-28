@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Notification title"
                 local:errorEnabled="true">
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/titleEditText"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Notification message"
                 local:errorEnabled="true">
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/messageEditText"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="TODO repeat pattern"
                 local:errorEnabled="true">
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/timeEditText"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />

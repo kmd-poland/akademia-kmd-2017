@@ -19,15 +19,6 @@ namespace HelloWorld.Droid.Services
             this.ctx = context;
         }
 
-        public void CancelNotification (int id)
-        {
-            var alarmManager = (AlarmManager) this.ctx.GetSystemService(Context.AlarmService);
-            Intent intent = new Intent (this.ctx, typeof (NotificationPublisher));
-            PendingIntent alarmIntent = PendingIntent.GetBroadcast (this.ctx, 0, intent, 0);
-
-            alarmManager.Cancel(alarmIntent);
-        }
-
         public Task ScheduleNotification (CoreNotification coreNotification)
         {
             var task = new TaskFactory ().StartNew (() => {
@@ -43,8 +34,8 @@ namespace HelloWorld.Droid.Services
                 var currentCal = Calendar.Instance;
 
                 // todo set time according to occurrence
-                firingCal.Set (CalendarField.Hour, 10); // At the hour you wanna fire
-                firingCal.Set (CalendarField.Minute, 16); // Particular minute
+                firingCal.Set (CalendarField.Hour, 14); // At the hour you wanna fire
+                firingCal.Set (CalendarField.Minute, 03); // Particular minute
                 firingCal.Set (CalendarField.Second, 17); // particular second
                 if (firingCal.CompareTo (currentCal) < 0) {
                     firingCal.Add (CalendarField.DayOfMonth, 1);
@@ -60,6 +51,16 @@ namespace HelloWorld.Droid.Services
 
             return task;
         }
+
+        public void CancelNotification (int id)
+        {
+            var alarmManager = (AlarmManager)this.ctx.GetSystemService (Context.AlarmService);
+            Intent intent = new Intent (this.ctx, typeof (NotificationPublisher));
+            PendingIntent alarmIntent = PendingIntent.GetBroadcast (this.ctx, 0, intent, 0);
+
+            alarmManager.Cancel (alarmIntent);
+        }
+
 
         /// <summary>
         /// Creates a single notification, an instance of <see cref="Android.App.Notification"/> class.
