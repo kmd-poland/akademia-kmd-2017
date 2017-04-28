@@ -13,7 +13,7 @@ namespace HelloWorld.Core.ViewModels
 	public class PhotoPluginViewModel : MvxViewModel
 	{
 		IMvxPictureChooserTask PictureChooser = Mvx.Resolve<IMvxPictureChooserTask>();
-		//public ReactiveCommand<Unit, Stream> TakePhotoCommand;
+		public ReactiveCommand<Unit, Stream> TakePhotoCommand { get; set; }
 
 		private byte[] _bytes;
 		public byte[] Bytes
@@ -31,15 +31,10 @@ namespace HelloWorld.Core.ViewModels
 
 		public PhotoPluginViewModel()
 		{
-			//this.TakePhotoCommand = ReactiveCommand.CreateFromTask(async () => await TakePicture(), Observable.Return(true));
-			//this.TakePhotoCommand.CanExecute.Subscribe(x=>{
-			//    x.GetType();
-			//});
-		}
-
-		public void TakePictureSynch()
-		{
-			PictureChooser.TakePicture(400, 95, OnPicture, () => { });
+			this.TakePhotoCommand = ReactiveCommand.CreateFromTask(() => PictureChooser.TakePicture(400, 75));
+			this.TakePhotoCommand.Subscribe(x=>{
+				this.OnPicture(x);
+			});
 		}
 	}
 }

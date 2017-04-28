@@ -33,19 +33,14 @@ namespace HelloWorld.Droid.Views
 			var photo = FindViewById<ImageView>(Resource.Id.photo);
 
 			var bSet = this.CreateBindingSet<PhotoPluginView, PhotoPluginViewModel>();
-			//bSet.Bind(takePhoto)
-			//	.To(vm => vm.TakePhotoCommand);
+			bSet.Bind(takePhoto)
+			    .To(vm => vm.TakePhotoCommand);
 
 			bSet.Bind(photo)
 				.To(vm => vm.Bytes);
 				//.WithConversion(new InMemoryImageConverter());
 
 			bSet.Apply();
-
-			takePhoto.Click += (sender, e) =>
-			{
-				this.ViewModel.TakePictureSynch();
-			};
 		}
     }
 
