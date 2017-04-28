@@ -1,10 +1,12 @@
 ﻿using Android.OS;
 using Android.Support.V7.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Core.ViewModels;
+using Acr.UserDialogs;
 
 namespace HelloWorld.Droid.Views
 {
-    public abstract class BaseView : MvxAppCompatActivity
+    public abstract class BaseView<T> : MvxAppCompatActivity<T> where T : MvxViewModel
     {
         protected Toolbar Toolbar { get; set; }
 
@@ -12,6 +14,7 @@ namespace HelloWorld.Droid.Views
         {
             base.OnCreate (bundle);
 
+        
             SetContentView (LayoutResource);
 
             Toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);

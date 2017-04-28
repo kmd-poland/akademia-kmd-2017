@@ -1,4 +1,4 @@
-﻿using MvvmCross.Platform.IoC;
+using MvvmCross.Platform.IoC;
 
 namespace HelloWorld.Core
 {
@@ -11,7 +11,7 @@ namespace HelloWorld.Core
                 .AsInterfaces ()
                 .RegisterAsLazySingleton ();
 
-            RegisterAppStart<ViewModels.FirstViewModel> ();
+            RegisterAppStart<ViewModels.StartViewModel> ();
         }
     }
 }
