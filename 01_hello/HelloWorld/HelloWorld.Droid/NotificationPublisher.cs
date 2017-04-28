@@ -12,9 +12,10 @@ namespace HelloWorld.Droid.Views
 
         public override void OnReceive (Context context, Intent intent)
         {
-            NotificationManager notificationManager = (NotificationManager)context.GetSystemService (Context.NotificationService);
+            NotificationManager notificationManager = 
+                (NotificationManager)context.GetSystemService (Context.NotificationService);
 
-            Android.App.Notification notification = intent.GetParcelableExtra (NOTIFICATION) as Android.App.Notification;
+            var notification = intent.GetParcelableExtra (NOTIFICATION) as Notification;
             int id = intent.GetIntExtra (NOTIFICATION_ID, 0);
             notificationManager.Notify (id, notification);
         }
