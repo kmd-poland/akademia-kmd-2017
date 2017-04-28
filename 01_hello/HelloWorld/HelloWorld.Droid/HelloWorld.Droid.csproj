@@ -189,6 +189,7 @@
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\layout\StartView.axml" />
     <AndroidResource Include="Resources\layout\PhotoPlugin.axml" />
+    <AndroidResource Include="Resources\layout\NotificationsView.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -210,6 +211,10 @@
     <Compile Include="Views\PhotoPluginView.cs" />
     <Compile Include="Bootstrap\PictureChooserPluginBootstrap.cs" />
     <Compile Include="Converters\InMemoryImageConverter.cs" />
+    <Compile Include="Views\NotificationsView.cs" />
+    <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Services\AndroidNotificationService.cs" />
+    <Compile Include="NotificationPublisher.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />

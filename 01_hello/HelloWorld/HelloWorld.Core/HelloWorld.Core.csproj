@@ -81,6 +81,12 @@
     <Compile Include="ViewModels\StartViewModel.cs" />
     <Compile Include="ViewModels\RxUICommanViewModel.cs" />
     <Compile Include="ViewModels\PhotoPluginViewModel.cs" />
+    <Compile Include="ViewModels\FirstViewModel.cs" />
+    <Compile Include="ViewModels\NotificationsViewModel.cs" />
+    <Compile Include="Domain\CoreNotification.cs" />
+    <Compile Include="Domain\RepeatPattern.cs" />
+    <Compile Include="Domain\RepetitionInterval.cs" />
+    <Compile Include="Services\INotificationService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
