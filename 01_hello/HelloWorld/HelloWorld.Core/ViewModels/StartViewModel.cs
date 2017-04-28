@@ -14,6 +14,8 @@ namespace HelloWorld.Core.ViewModels
         public ReactiveCommand<Unit, bool> GoToPhotoPlugin { get; }
         public ReactiveCommand<Unit, bool> GoToNotificationsView { get; }
 
+        public ReactiveCommand<Unit, bool> GoListView { get; }
+
         public StartViewModel()
         {
             GoToAlertView = ReactiveCommand.Create(() => this.ShowViewModel<AlertViewModel>());
@@ -22,6 +24,8 @@ namespace HelloWorld.Core.ViewModels
 
             GoToPhotoPlugin = ReactiveCommand.Create(() => this.ShowViewModel<PhotoPluginViewModel>());
             GoToNotificationsView = ReactiveCommand.Create(() => this.ShowViewModel<NotificationsViewModel>());
+
+            GoListView = ReactiveCommand.Create(() => this.ShowViewModel<ListViewModel>());
         }
     }
 }

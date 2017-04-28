@@ -25,7 +25,7 @@ namespace HelloWorld.Droid.Views
             var goToPhoto = FindViewById<Button>(Resource.Id.button_plugin_photo);
 
             var goToNotifications = FindViewById<Button> (Resource.Id.button_notifications);
-
+            var goToListView = FindViewById<Button>(Resource.Id.button_listview);
 
             var bSet = this.CreateBindingSet<StartView, StartViewModel>();
 
@@ -44,6 +44,9 @@ namespace HelloWorld.Droid.Views
 
             bSet.Bind(goToNotifications)
                 .To (vm => vm.GoToNotificationsView);
+
+            bSet.Bind(goToListView)
+                .To(vm => vm.GoListView);
 
             bSet.Apply();
         }

@@ -161,6 +161,9 @@
     <Reference Include="MvvmCross.Plugins.PictureChooser.Droid">
       <HintPath>..\packages\MvvmCross.Plugin.PictureChooser.4.4.0\lib\MonoAndroid\MvvmCross.Plugins.PictureChooser.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.4.0\lib\MonoAndroid\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloWorld.Core\HelloWorld.Core.csproj">
@@ -190,6 +193,8 @@
     <AndroidResource Include="Resources\layout\StartView.axml" />
     <AndroidResource Include="Resources\layout\PhotoPlugin.axml" />
     <AndroidResource Include="Resources\layout\NotificationsView.axml" />
+    <AndroidResource Include="Resources\layout\ListView.axml" />
+    <AndroidResource Include="Resources\layout\EditView.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -215,6 +220,9 @@
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Services\AndroidNotificationService.cs" />
     <Compile Include="NotificationPublisher.cs" />
+    <Compile Include="Views\ListView.cs" />
+    <Compile Include="Views\EditView.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />

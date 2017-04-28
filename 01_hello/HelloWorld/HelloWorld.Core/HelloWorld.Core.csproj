@@ -68,6 +68,9 @@
     <Reference Include="MvvmCross.Plugins.PictureChooser">
       <HintPath>..\packages\MvvmCross.Plugin.PictureChooser.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.PictureChooser.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -87,6 +90,9 @@
     <Compile Include="Domain\RepeatPattern.cs" />
     <Compile Include="Domain\RepetitionInterval.cs" />
     <Compile Include="Services\INotificationService.cs" />
+    <Compile Include="ViewModels\ListViewModel.cs" />
+    <Compile Include="Domain\DataChangedMessage.cs" />
+    <Compile Include="ViewModels\EditViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
