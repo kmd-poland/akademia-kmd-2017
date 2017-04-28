@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using HelloWorld.Core.ViewModels;
@@ -16,7 +16,7 @@ namespace HelloWorld.iOS.Views
         {
             base.ViewDidLoad ();
 
-            var set = this.CreateBindingSet<FirstView, FirstViewModel> ();
+            var set = this.CreateBindingSet<FirstView, AlertViewModel> ();
             set.Bind (Label).To (vm => vm.Hello);
             set.Bind (TextField).To (vm => vm.Hello);
             set.Apply ();

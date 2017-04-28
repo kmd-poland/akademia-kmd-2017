@@ -2,6 +2,9 @@
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
+using Acr.UserDialogs;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid.Platform;
 
 namespace HelloWorld.Droid
 {
@@ -9,6 +12,7 @@ namespace HelloWorld.Droid
     {
         public Setup (Context applicationContext) : base (applicationContext)
         {
+          
         }
 
         protected override IMvxApplication CreateApp ()
@@ -19,6 +23,12 @@ namespace HelloWorld.Droid
         protected override IMvxTrace CreateDebugTrace ()
         {
             return new DebugTrace ();
+        }
+
+        protected override void InitializeIoC()
+        {
+            base.InitializeIoC();
+               UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
         }
     }
 }

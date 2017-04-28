@@ -1,12 +1,71 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
-	<android.support.design.widget.AppBarLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/toolbar_layout">
-		<include android:id="@+id/toolbar" layout="@layout/toolbar" local:layout_scrollFlags="scroll|enterAlways" />
-	</android.support.design.widget.AppBarLayout>
-	<FrameLayout android:id="@+id/content_frame" android:layout_below="@id/toolbar_layout" android:layout_width="match_parent" android:layout_height="match_parent">
-		<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-			<EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:textSize="40dp" local:MvxBind="Text Hello" />
-			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:textSize="40dp" local:MvxBind="Text Hello" />
-		</LinearLayout>
-	</FrameLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_layout">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            local:layout_scrollFlags="scroll|enterAlways" />
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:id="@+id/content_frame"
+        android:layout_below="@id/toolbar_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Radius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <EditText
+                android:id="@+id/radius"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/button_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULATE" />
+        <TextView
+            android:text="Volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+    </LinearLayout>
 </RelativeLayout>
