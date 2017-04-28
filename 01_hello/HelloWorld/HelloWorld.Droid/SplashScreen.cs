@@ -16,6 +16,7 @@ namespace HelloWorld.Droid
         public SplashScreen ()
             : base (Resource.Layout.SplashScreen)
         {
+            
         }
     }
 }

@@ -2,6 +2,9 @@
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
+using HelloWorld.Core.Services;
+using HelloWorld.Droid.Services;
+using MvvmCross.Platform;
 
 namespace HelloWorld.Droid
 {
@@ -19,6 +22,13 @@ namespace HelloWorld.Droid
         protected override IMvxTrace CreateDebugTrace ()
         {
             return new DebugTrace ();
+        }
+
+        protected override void InitializeIoC ()
+        {
+            base.InitializeIoC ();
+
+            Mvx.RegisterSingleton<INotificationService> (new AndroidNotificationService(this.ApplicationContext));
         }
     }
 }
