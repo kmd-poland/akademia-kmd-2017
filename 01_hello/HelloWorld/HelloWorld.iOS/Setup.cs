@@ -3,6 +3,9 @@ using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using MvvmCross.Platform.Platform;
 using UIKit;
+using MvvmCross.Platform;
+using HelloWorld.Core.Services;
+using HelloWorld.iOS.Services;
 
 namespace HelloWorld.iOS
 {
@@ -26,6 +29,13 @@ namespace HelloWorld.iOS
         protected override IMvxTrace CreateDebugTrace ()
         {
             return new DebugTrace ();
+        }
+
+        protected override void InitializeIoC ()
+        {
+            base.InitializeIoC ();
+
+            Mvx.RegisterSingleton<INotificationService> (new iOSNotificationService());
         }
     }
 }
