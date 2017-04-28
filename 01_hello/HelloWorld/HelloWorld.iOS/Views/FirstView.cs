@@ -17,8 +17,8 @@ namespace HelloWorld.iOS.Views
             base.ViewDidLoad ();
 
             var set = this.CreateBindingSet<FirstView, AlertViewModel> ();
-            set.Bind (Label).To (vm => vm.Hello);
-            set.Bind (TextField).To (vm => vm.Hello);
+            set.Bind (Label).To (vm => vm.Radius);
+            set.Bind (TextField).To (vm => vm.Height);
             set.Apply ();
         }
     }

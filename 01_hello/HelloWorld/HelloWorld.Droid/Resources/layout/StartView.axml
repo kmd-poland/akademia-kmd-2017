@@ -33,5 +33,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Go to rxui validation" />
+        <Button
+            android:id="@+id/button_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to notifications" />
     </LinearLayout>
 </RelativeLayout>

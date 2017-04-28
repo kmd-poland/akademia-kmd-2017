@@ -10,12 +10,14 @@ namespace HelloWorld.Core.ViewModels
         public ReactiveCommand<Unit, bool> GoToAlertView { get; }
         public ReactiveCommand<Unit, bool> GoToMvxCanExecuteView { get; }
         public ReactiveCommand<Unit, bool> GoToRxUICanExecuteView { get; }
+        public ReactiveCommand<Unit, bool> GoToNotificationsView { get; }
 
         public StartViewModel()
         {
             GoToAlertView = ReactiveCommand.Create(() => this.ShowViewModel<AlertViewModel>());
             GoToMvxCanExecuteView = ReactiveCommand.Create(() => this.ShowViewModel<MvxCommandViewModel>());
             GoToRxUICanExecuteView = ReactiveCommand.Create(() => this.ShowViewModel<RxUICommanViewModel>());
+            GoToNotificationsView = ReactiveCommand.Create(() => this.ShowViewModel<NotificationsViewModel>());
         }
     }
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_layout">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            local:layout_scrollFlags="scroll|enterAlways" />
+    </android.support.design.widget.AppBarLayout>
+<!--<FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_below="@id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:layout_below="@id/toolbar_layout">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/titleEditLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Notification title"
+                local:errorEnabled="true">
+                <EditText
+                    android:id="@+id/titleEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/messageEditLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Notification message"
+                local:errorEnabled="true">
+                <EditText
+                    android:id="@+id/messageEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/timeinputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TODO repeat pattern"
+                local:errorEnabled="true">
+                <EditText
+                    android:id="@+id/timeEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:text="Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/addNotificationButton" />
+        </LinearLayout>
+    </ScrollView>
+<!--</FrameLayout>-->
+</RelativeLayout>
