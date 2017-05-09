@@ -28,15 +28,16 @@ namespace HelloWorld.Droid.Services
                 Intent notificationIntent = new Intent (this.ctx, typeof (NotificationPublisher));
                 notificationIntent.PutExtra (NotificationPublisher.NOTIFICATION_ID, coreNotification.Id);
                 notificationIntent.PutExtra (NotificationPublisher.NOTIFICATION, notification);
-                PendingIntent pendingIntent = PendingIntent.GetBroadcast (this.ctx, 0, notificationIntent, PendingIntentFlags.UpdateCurrent);
+                var requestId = DateTime.Now.Millisecond;
+                PendingIntent pendingIntent = PendingIntent.GetBroadcast (this.ctx, requestId, notificationIntent, PendingIntentFlags.CancelCurrent);
 
                 var firingCal = Calendar.Instance;
                 var currentCal = Calendar.Instance;
 
                 // todo set time according to occurrence
-                firingCal.Set (CalendarField.Hour, 14); // At the hour you wanna fire
-                firingCal.Set (CalendarField.Minute, 03); // Particular minute
-                firingCal.Set (CalendarField.Second, 17); // particular second
+                firingCal.Set (CalendarField.HourOfDay, DateTime.Now.Hour); // At the hour you wanna fire
+                firingCal.Set (CalendarField.Minute, DateTime.Now.Minute + 1); // Particular minute
+                firingCal.Set (CalendarField.Second, 30); // particular second
                 if (firingCal.CompareTo (currentCal) < 0) {
                     firingCal.Add (CalendarField.DayOfMonth, 1);
                 }
