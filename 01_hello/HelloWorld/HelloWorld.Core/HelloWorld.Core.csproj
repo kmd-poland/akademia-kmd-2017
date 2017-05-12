@@ -93,6 +93,7 @@
     <Compile Include="ViewModels\ListViewModel.cs" />
     <Compile Include="Domain\DataChangedMessage.cs" />
     <Compile Include="ViewModels\EditViewModel.cs" />
+    <Compile Include="Domain\SetTitleMessage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

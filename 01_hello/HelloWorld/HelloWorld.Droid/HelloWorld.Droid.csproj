@@ -195,6 +195,7 @@
     <AndroidResource Include="Resources\layout\NotificationsView.axml" />
     <AndroidResource Include="Resources\layout\ListView.axml" />
     <AndroidResource Include="Resources\layout\EditView.axml" />
+    <AndroidResource Include="Resources\layout\item_list.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -11,4 +11,6 @@ namespace HelloWorld.Core.Domain
             this.Content = value;
         }
     }
+
+	
 }
