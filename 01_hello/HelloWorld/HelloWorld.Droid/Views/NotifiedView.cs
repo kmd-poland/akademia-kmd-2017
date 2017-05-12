@@ -35,6 +35,7 @@ namespace HelloWorld.Droid.Views
             bindingSet
                 .Bind (this.medicationIdTextView)
                 .To (vm => vm.MedicationId);
+            bindingSet.Apply();
         }
     }
 }
