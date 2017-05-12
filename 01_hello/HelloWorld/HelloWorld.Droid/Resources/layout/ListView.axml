@@ -12,9 +12,15 @@
             layout="@layout/toolbar"
             local:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_below="@id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60px" />
     <MvxListView
         android:id="@+id/listView"
-        android:layout_below="@id/toolbar_layout"
+        android:layout_below="@id/title"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
