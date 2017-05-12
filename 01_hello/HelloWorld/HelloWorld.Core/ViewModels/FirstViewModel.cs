@@ -48,7 +48,7 @@ namespace HelloWorld.Core.ViewModels
 
         private async Task<CoreNotification> CreateNotificationAsync()
         {
-            return await Task.FromResult(new CoreNotification(DateTime.Now.Ticks, this.Title, this.Message, new RepeatPattern()));
+            return await Task.FromResult(new CoreNotification(DateTime.Now.Millisecond, this.Title, this.Message, new RepeatPattern()));
         }
 
         private IObservable<bool> AreAllControlsValidObservable()

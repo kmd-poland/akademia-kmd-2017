@@ -195,6 +195,7 @@
     <AndroidResource Include="Resources\layout\NotificationsView.axml" />
     <AndroidResource Include="Resources\layout\ListView.axml" />
     <AndroidResource Include="Resources\layout\EditView.axml" />
+    <AndroidResource Include="Resources\layout\NotifiedView.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -223,6 +224,7 @@
     <Compile Include="Views\ListView.cs" />
     <Compile Include="Views\EditView.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Views\NotifiedView.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />

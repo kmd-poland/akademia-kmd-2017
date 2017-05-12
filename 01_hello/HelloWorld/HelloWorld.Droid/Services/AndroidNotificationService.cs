@@ -7,11 +7,15 @@ using HelloWorld.Droid.Views;
 using MvvmCross.Platform.Droid.Platform;
 using Java.Util;
 using System.Threading.Tasks;
+using Android.Support.V7.App;
+using Android.Media;
 
 namespace HelloWorld.Droid.Services
 {
     public class AndroidNotificationService : INotificationService
     {
+        private readonly static string KEY_TEXT_REPLY = "key_action1";
+
         private Context ctx;
 
         public AndroidNotificationService (Context context)
@@ -24,9 +28,12 @@ namespace HelloWorld.Droid.Services
             var task = new TaskFactory ().StartNew (() => {
                 // todo return an identifier(s) for a notification(s) to store in db to be able to cancel them later
                 // todo create notifications for all occrrences using AlarmManager.SetRepeating method
-                var notification = this.GetNotification (coreNotification, DateTime.Now.Date);
+
                 Intent notificationIntent = new Intent (this.ctx, typeof (NotificationPublisher));
-                notificationIntent.PutExtra (NotificationPublisher.NOTIFICATION_ID, coreNotification.Id);
+                var notification = this.GetNotification (coreNotification, DateTime.Now.Date, notificationIntent);
+                notification.Defaults |= NotificationDefaults.Lights | NotificationDefaults.Sound | NotificationDefaults.Vibrate;
+
+                notificationIntent.PutExtra (NotificationPublisher.NOTIFICATION_ID, coreNotification.Id); // here we put long but NotificationPublisher expects int
                 notificationIntent.PutExtra (NotificationPublisher.NOTIFICATION, notification);
                 var requestId = DateTime.Now.Millisecond;
                 PendingIntent pendingIntent = PendingIntent.GetBroadcast (this.ctx, requestId, notificationIntent, PendingIntentFlags.CancelCurrent);
@@ -36,8 +43,8 @@ namespace HelloWorld.Droid.Services
 
                 // todo set time according to occurrence
                 firingCal.Set (CalendarField.HourOfDay, DateTime.Now.Hour); // At the hour you wanna fire
-                firingCal.Set (CalendarField.Minute, DateTime.Now.Minute + 1); // Particular minute
-                firingCal.Set (CalendarField.Second, 30); // particular second
+                firingCal.Set (CalendarField.Minute, DateTime.Now.Minute); // Particular minute
+                firingCal.Set (CalendarField.Second, DateTime.Now.Second + 4); // particular second
                 if (firingCal.CompareTo (currentCal) < 0) {
                     firingCal.Add (CalendarField.DayOfMonth, 1);
                 }
@@ -57,7 +64,7 @@ namespace HelloWorld.Droid.Services
         {
             var alarmManager = (AlarmManager)this.ctx.GetSystemService (Context.AlarmService);
             Intent intent = new Intent (this.ctx, typeof (NotificationPublisher));
-            PendingIntent alarmIntent = PendingIntent.GetBroadcast (this.ctx, 0, intent, 0);
+            PendingIntent alarmIntent = PendingIntent.GetBroadcast (this.ctx, id, intent, 0);
 
             alarmManager.Cancel (alarmIntent);
         }
@@ -68,13 +75,29 @@ namespace HelloWorld.Droid.Services
         /// </summary>
         /// <returns>Android notification created from <b>notification</b> parameter.</returns>
         /// <param name="notification"><b>CoreNotification</b></param>
-        private Notification GetNotification (CoreNotification notification, DateTime occurrence)
+        private Notification GetNotification (CoreNotification notification, DateTime occurrence, Intent notificationIntent)
         {
-        	var builder = new Notification.Builder (this.ctx);
+        	var builder = new NotificationCompat.Builder (this.ctx);
         	builder.SetContentTitle (notification.Title);
         	builder.SetContentText (notification.Message + this.FormatOccurrence(occurrence));
+            builder.SetTicker ("Ticker");
         	builder.SetSmallIcon (Resource.Drawable.Icon);
+
+            builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
+            builder.SetPriority ((int)NotificationPriority.High);
+            builder.SetVisibility ((int)NotificationVisibility.Public); // visible on locked screen
+
+            var action = this.GetAction (builder, notificationIntent, () => { System.Diagnostics.Debug.WriteLine ("ACTION!"); });
+            builder.AddAction (action);
+
         	return builder.Build ();
+        }
+
+        private NotificationCompat.Action GetAction(NotificationCompat.Builder builder, Intent notificationIntent, Action actualAction)
+        {
+            var remoteInput = new Android.Support.V4.App.RemoteInput.Builder (KEY_TEXT_REPLY).SetLabel ("Akcja 1").Build ();
+            var pendingIntent = PendingIntent.GetBroadcast (this.ctx, 0, notificationIntent, PendingIntentFlags.UpdateCurrent);
+            return new NotificationCompat.Action.Builder (Resource.Drawable.Icon, "Akcja 1", pendingIntent).AddRemoteInput (remoteInput).Build ();
         }
 
         private string FormatOccurrence(DateTime occurrence)

@@ -1,6 +1,11 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using System.Threading;
+using MvvmCross.Core.ViewModels;
+using HelloWorld.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Droid.Views;
 
 namespace HelloWorld.Droid.Views
 {
@@ -16,8 +21,27 @@ namespace HelloWorld.Droid.Views
                 (NotificationManager)context.GetSystemService (Context.NotificationService);
 
             var notification = intent.GetParcelableExtra (NOTIFICATION) as Notification;
-            int id = intent.GetIntExtra (NOTIFICATION_ID, 0);
-            notificationManager.Notify (id, notification);
+
+            if (notification != null) {
+                var id = intent.GetIntExtra (NOTIFICATION_ID, 0);
+                notificationManager.Notify (id, notification);
+            } else {
+                System.Diagnostics.Debug.WriteLine (intent.Action);
+                //var i = new Intent (context, typeof (NotifiedView));
+                //i.SetFlags (ActivityFlags.NewTask);
+                //context.StartActivity (i);
+
+                //if (intent.Action == "Akcja 1") {
+                    var request = new MvxViewModelRequest ();
+                    request.ParameterValues = new System.Collections.Generic.Dictionary<string, string>();                        
+                    request.ParameterValues.Add("medicationId", 987.ToString());
+                    request.ViewModelType = typeof (NotifiedViewModel);
+                    var requestTranslator = Mvx.Resolve<IMvxAndroidViewModelRequestTranslator> ();
+                    var newActivity = requestTranslator.GetIntentFor (request);
+                    newActivity.SetFlags (ActivityFlags.NewTask);
+                    context.StartActivity(newActivity);
+                //}
+            }
         }
 
         public void CancelAlarm (Context context)
