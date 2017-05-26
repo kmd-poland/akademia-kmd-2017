@@ -48,5 +48,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Go to ListView" />
+        <Button
+            android:id="@+id/button_uithreaddemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to UIThreadDemo" />
     </LinearLayout>
 </RelativeLayout>

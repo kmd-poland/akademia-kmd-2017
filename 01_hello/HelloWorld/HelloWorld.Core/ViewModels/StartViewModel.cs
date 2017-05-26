@@ -16,6 +16,8 @@ namespace HelloWorld.Core.ViewModels
 
         public ReactiveCommand<Unit, bool> GoListView { get; }
 
+        public ReactiveCommand<Unit, bool> GoToUIThreadView { get; }
+
         public StartViewModel()
         {
             GoToAlertView = ReactiveCommand.Create(() => this.ShowViewModel<AlertViewModel>());
@@ -26,6 +28,7 @@ namespace HelloWorld.Core.ViewModels
             GoToNotificationsView = ReactiveCommand.Create(() => this.ShowViewModel<NotificationsViewModel>());
 
             GoListView = ReactiveCommand.Create(() => this.ShowViewModel<ListViewModel>());
+            GoToUIThreadView = ReactiveCommand.Create(() => this.ShowViewModel <UIThreadDemoViewModel> ());
         }
     }
 }
