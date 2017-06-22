@@ -28,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -198,6 +199,7 @@
     <AndroidResource Include="Resources\layout\NotifiedView.axml" />
     <AndroidResource Include="Resources\layout\item_list.axml" />
     <AndroidResource Include="Resources\layout\UIThreadDemoView.axml" />
+    <AndroidResource Include="Resources\layout\ReactiveSearchView.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -228,6 +230,7 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Views\NotifiedView.cs" />
     <Compile Include="Views\UIThreadDemoView.cs" />
+    <Compile Include="Views\ReactiveSearchView.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />

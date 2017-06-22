@@ -28,6 +28,8 @@ namespace HelloWorld.Droid.Views
             var goToListView = FindViewById<Button>(Resource.Id.button_listview);
             var goToUIThreadView = FindViewById<Button>(Resource.Id.button_uithreaddemo);
 
+            var goToSearchView = FindViewById<Button>(Resource.Id.button_search);
+
             var bSet = this.CreateBindingSet<StartView, StartViewModel>();
 
             bSet.Bind(goToAlert)
@@ -51,6 +53,10 @@ namespace HelloWorld.Droid.Views
 
             bSet.Bind(goToUIThreadView)
                 .To(vm => vm.GoToUIThreadView);
+
+
+			bSet.Bind(goToSearchView)
+                .To(vm => vm.GoReactiveSearchView);
             bSet.Apply();
         }
     }

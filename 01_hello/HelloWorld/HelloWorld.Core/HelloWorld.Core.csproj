@@ -96,6 +96,7 @@
     <Compile Include="ViewModels\NotifiedViewModel.cs" />
     <Compile Include="Domain\SetTitleMessage.cs" />
     <Compile Include="ViewModels\UIThreadDemoViewModel.cs" />
+    <Compile Include="ViewModels\ReactiveSearchViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
